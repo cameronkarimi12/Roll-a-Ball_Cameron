@@ -6,7 +6,7 @@ using UnityEngine;
  * REQUIRED DEPENDENCIES: TextMeshProUGUI
  * DESCRIPTION: Handles collectible tracking and win condition
  *              for the game
- * AUTHOR: Your name
+ * AUTHOR: CKarimi
  * VERSION: 1.0
  *************************************************************/
 public class GameManager : MonoBehaviour
@@ -22,9 +22,6 @@ public class GameManager : MonoBehaviour
 
     // Tracks how many collectibles are left to collect
     private int numberOfCollectibles;
-
-    // Prevents the win message from repeating
-    private bool hasWon;
 
     // Initialize everything at start
     private void Start()
@@ -42,44 +39,25 @@ public class GameManager : MonoBehaviour
     // Called by the CollectibleController when a collectible is picked up - decrements count
     public void UpdateRemaining()
     {
-        if (hasWon)
-        {
-            return;
-        }
-
-        if (numberOfCollectibles > 0)
-        {
-            numberOfCollectibles--;
-        }
-
+        numberOfCollectibles--;
         UpdateRemainingUI();
     }
 
     private void UpdateRemainingUI()
     {
-        if (RemainingTextUI == null)
-        {
-            return;
-        }
-
-        if (numberOfCollectibles > 0)
+        if (RemainingTextUI != null && numberOfCollectibles > 0)
         {
             RemainingTextUI.text = "Collectibles Remaining: " + numberOfCollectibles;
-            return;
         }
-
-        if (hasWon)
+        else
         {
-            return;
-        }
+            RemainingTextUI.text = "You Win";
 
-        hasWon = true;
-        RemainingTextUI.text = "You Win";
-
-        if (audioSource != null && winClip != null)
-        {
-            audioSource.clip = winClip;
-            audioSource.Play();
+            if (audioSource != null && winClip != null)
+            {
+                audioSource.clip = winClip;
+                audioSource.Play();
+            }
         }
     }
 }
