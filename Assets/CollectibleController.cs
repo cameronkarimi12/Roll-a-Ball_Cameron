@@ -12,6 +12,10 @@ public class CollectibleController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+// Finds the Game Manager in the Scene
+gameManager = FindAnyObjectByType<GameManager>();
+
         
     }
 
@@ -24,7 +28,7 @@ public class CollectibleController : MonoBehaviour
     {
         // Only executes if the collision was with the Player
         if (other.CompareTag("Player"))
-        {
+        { gameManager.UpdateRemaining();
             // Spawn audio at the collectible's position (auto-destroys)
             AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
@@ -34,6 +38,8 @@ public class CollectibleController : MonoBehaviour
             // Safely destroy the collectible immediately
             Destroy(gameObject);
         }
-    }
+    } private GameManager gameManager;
+
+
 
 }
