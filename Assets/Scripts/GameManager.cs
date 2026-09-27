@@ -1,21 +1,21 @@
-using TMPro;
 using UnityEngine;
-
+using TMPro;  // Brings in the Text Mesh script package into this script
+using System.Collections; 
+using UnityEngine.SceneManagement;
 /************************************************************
- * COMPONENT OF: Game Manager
- * REQUIRED DEPENDENCIES: TextMeshProUGUI
- * DESCRIPTION: Handles collectible tracking and win condition
- *              for the game
- * AUTHOR: CKarimi
- * VERSION: 1.0
- *************************************************************/
+* COMPONENT OF: Game Manager
+* REQUIRED DEPENDENCIES: TextMeshProUGUI
+* DESCRIPTION: Handles collectible tracking and win condition 
+*              for the game
+* AUTHOR: Your name
+* VERSION: 1.0
+*************************************************************/
 public class GameManager : MonoBehaviour
-{
+{ 
     // UI text that shows collectibles remaining (assign in inspector)
     [SerializeField] private TextMeshProUGUI RemainingTextUI;
-
-    // Victory sound (assign in inspector)
     [SerializeField] private AudioClip winClip;
+
 
     // Audio source for victory sound
     private AudioSource audioSource;
@@ -24,14 +24,14 @@ public class GameManager : MonoBehaviour
     private int numberOfCollectibles;
 
     // Initialize everything at start
-    private void Start()
+    void Start()
     {
-        // Assigns the AudioSource component to the audioSource field
+        // Assigns the AudioSource component to the audioSource field        
         audioSource = GetComponent<AudioSource>();
-
+        
         // Determines how many Collectibles are in this scene
         numberOfCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
-
+        Debug.Log("Collectibles found: " + numberOfCollectibles);
         // Initialize the UI display
         UpdateRemainingUI();
     }
@@ -39,10 +39,9 @@ public class GameManager : MonoBehaviour
     // Called by the CollectibleController when a collectible is picked up - decrements count
     public void UpdateRemaining()
     {
-        numberOfCollectibles--;
-        UpdateRemainingUI();
-    }
-
+       numberOfCollectibles--; UpdateRemainingUI();
+         // Update display immediately when score changes
+    } // Updates UI text - shows remaining count or "You Win" message
     private void UpdateRemainingUI()
     {
         if (RemainingTextUI != null && numberOfCollectibles > 0)
@@ -51,13 +50,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            RemainingTextUI.text = "You Win";
-
-            if (audioSource != null && winClip != null)
-            {
-                audioSource.clip = winClip;
-                audioSource.Play();
-            }
+            StartCoroutine(EndGame());
         }
     }
+    IEnumerator EndGame()
+{
+    RemainingTextUI.text = "You Win";
+    audioSource.clip = winClip;
+    audioSource.Play();
+
+    // Waits for the exact duration of the audio clip
+    yield return new WaitForSeconds(audioSource.clip.length);
+    Scene currentScene = SceneManager.GetActiveScene(); SceneManager.LoadScene(currentScene.name);
+}
+
 }
