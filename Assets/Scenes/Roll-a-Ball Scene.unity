@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: My_Collectible (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -315,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   RemainingTextUI: {fileID: 1795284821}
-  winClip: {fileID: 0}
+  winClip: {fileID: 8300000, guid: 1a1f66a2481cc4201b08ee51f23b9104, type: 3}
 --- !u!82 &445424022
 AudioSource:
   m_ObjectHideFlags: 0
@@ -688,6 +692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: My_Collectible (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -752,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -934,6 +942,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: My_Collectible (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -993,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1051,6 +1063,10 @@ PrefabInstance:
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_Name
       value: My_Collectible (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1111,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1175,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: My_Collectible (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1234,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1920,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8375057159194661600, guid: f0e8a2fc996c945308a91ffa38a12cf8, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: Collectible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
